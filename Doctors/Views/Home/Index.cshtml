@@ -1,7 +1,139 @@
-﻿
+﻿@model Doctors.Models.Patient
 @{
     ViewBag.Title = "Home Page";
 }
 
 
 
+
+@*@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "PopupControl";
+    settings.AllowResize = true;
+    settings.ShowHeader = true;
+    settings.ShowOnPageLoad = true;
+    settings.AllowDragging = true;
+    settings.CloseAction = CloseAction.OuterMouseClick;
+    settings.CloseOnEscape = true;
+    settings.Modal = true;
+    settings.PopupElementID = "Id";
+
+    settings.SetContent(() =>
+    {
+        ViewContext.Writer.Write("Popup control content");
+    });
+}).GetHtml()*@
+
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "FormLayout";
+
+    var groupItem = settings.Items.AddGroupItem(groupSettings =>
+    {
+        groupSettings.Caption = "Group Caption";
+        groupSettings.ShowCaption = DefaultBoolean.True;
+        groupSettings.GroupBoxDecoration = GroupBoxDecoration.Box;
+    });
+
+    groupItem.SettingsItems.ShowCaption = DefaultBoolean.True;
+    groupItem.SettingsItemCaptions.Location = LayoutItemCaptionLocation.Left;
+
+    groupItem.SettingsItemHelpTexts.Position = HelpTextPosition.Auto;
+
+    //groupItem.Items.Add(m => m.Id, item =>
+    //{
+    //    item.HelpText = "Help text for Id";
+    //});
+    groupItem.Items.Add(m => m.FirstName, item =>
+    {
+        item.HelpText = "Help text for FirstName";
+    });
+    groupItem.Items.Add(m => m.LastName, item =>
+    {
+        item.HelpText = "Help text for LastName";
+    });
+    groupItem.Items.Add(m => m.PhoneNumber, item =>
+    {
+        item.HelpText = "Help text for PhoneNumber";
+    });
+    groupItem.Items.Add(m => m.DateOfBirth, item =>
+    {
+        item.HelpText = "Help text for DateOfBirth";
+    });
+    groupItem.Items.Add(m => m.ContactInfo, item =>
+    {
+        item.HelpText = "Help text for ContactInfo";
+    });
+    groupItem.Items.Add(m => m.InsuranceTypeIDs, item =>
+    {
+        item.HelpText = "Help text for InsuranceTypeIDs";
+    });
+    groupItem.Items.Add(m => m.Referral, item =>
+    {
+        item.HelpText = "Help text for Referral";
+    });
+    groupItem.Items.Add(m => m.Age, item =>
+    {
+        item.HelpText = "Help text for Age";
+    });
+    groupItem.Items.Add(m => m.BloodType, item =>
+    {
+        item.HelpText = "Help text for BloodType";
+    });
+    groupItem.Items.Add(m => m.Allergies, item =>
+    {
+        item.HelpText = "Help text for Allergies";
+    });
+    groupItem.Items.Add(m => m.ChiefComplaint, item =>
+    {
+        item.HelpText = "Help text for ChiefComplaint";
+    });
+    groupItem.Items.Add(m => m.PastMedicalHistory, item =>
+    {
+        item.HelpText = "Help text for PastMedicalHistory";
+    });
+    groupItem.Items.Add(m => m.PastSurgeryHistory, item =>
+    {
+        item.HelpText = "Help text for PastSurgeryHistory";
+    });
+    groupItem.Items.Add(m => m.MedicationIDs, item =>
+    {
+        item.HelpText = "Help text for MedicationIDs";
+    });
+    groupItem.Items.Add(m => m.FamilyHisory, item =>
+    {
+        item.HelpText = "Help text for FamilyHisory";
+    });
+    groupItem.Items.Add(m => m.SocialHistory, item =>
+    {
+        item.HelpText = "Help text for SocialHistory";
+    });
+    groupItem.Items.Add(m => m.Vitals, item =>
+    {
+        item.HelpText = "Help text for Vitals";
+    });
+    groupItem.Items.Add(m => m.PhysicalExam, item =>
+    {
+        item.HelpText = "Help text for PhysicalExam";
+    });
+    groupItem.Items.Add(m => m.EcgIDs, item =>
+    {
+        item.HelpText = "Help text for EcgIDs";
+    });
+    groupItem.Items.Add(m => m.LabResultIDs, item =>
+    {
+        item.HelpText = "Help text for LabResultIDs";
+    });
+    groupItem.Items.Add(m => m.ImagingResultIDs, item =>
+    {
+        item.HelpText = "Help text for ImagingResultIDs";
+    });
+    groupItem.Items.Add(m => m.Assessment, item =>
+    {
+        item.HelpText = "Help text for Assessment";
+    });
+    groupItem.Items.Add(m => m.Plan, item =>
+    {
+        item.HelpText = "Help text for Plan";
+    });
+}).GetHtml()
