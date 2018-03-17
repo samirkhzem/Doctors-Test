@@ -1,0 +1,9 @@
+﻿@model Doctors.Models.SchedulerDataObject
+@{
+    ViewBag.Title = "SchedulerView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SchedulerView</h2>
+
+@Html.Action("SchedulerPartial", Model)
